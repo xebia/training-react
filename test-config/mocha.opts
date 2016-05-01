@@ -1,0 +1,3 @@
+--compilers js:babel-register
+--require test-config/mochasetup.js
+**/__tests__/*Spec.js

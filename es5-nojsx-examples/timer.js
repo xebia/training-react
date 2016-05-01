@@ -1,4 +1,3 @@
-/* eslint-disable no-var, func-names, prefer-arrow-callback, prefer-template, object-shorthand */
 (function (window, document) {
   var React = window.React;
   var ReactDOM = window.ReactDOM;
@@ -19,11 +18,11 @@
 
   Timer = React.createClass({
     getInitialState: getState,
-    updateState: function () {
-      this.setState(getState());
-    },
     componentDidMount: function () {
       this.interval = window.setInterval(this.updateState, 500);
+    },
+    updateState: function () {
+      this.setState(getState());
     },
     componentDidUnMount: function () {
       window.clearInterval(this.interval);

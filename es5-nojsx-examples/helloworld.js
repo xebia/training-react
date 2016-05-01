@@ -1,4 +1,3 @@
-/* eslint-disable no-var, func-names, prefer-arrow-callback, prefer-template */
 (function (window, document) {
   var React = window.React;
   var ReactDOM = window.ReactDOM;

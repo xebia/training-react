@@ -24,7 +24,6 @@ class Timer extends Component {
   render() {
     return (<div>
       <h1>Hello World!</h1>
-      <p>this is a paragraph</p>
       <p>The time is {this.state.time.toString()}</p>
     </div>);
   }

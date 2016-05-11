@@ -9,7 +9,7 @@ describe('Component: Timer', () => {
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
     sandbox.useFakeTimers();
-    sandbox.stub(global, 'setInterval').returns('mockInterval');
+    sandbox.spy(global, 'setInterval');
     sandbox.spy(global, 'clearInterval');
     wrapper = shallow(<Timer />);
   });
@@ -18,11 +18,13 @@ describe('Component: Timer', () => {
     sandbox.restore();
   });
 
-  it('should initially set the state to the current date', () => {
-    expect(wrapper.state()).to.deep.equal({ time: new Date(0) });
+  it('should render the current time based on the state', () => {
+    wrapper.setState({ time: new Date(10000) });
+    expect(wrapper.find('p').text()).to.equal(`The time is ${new Date(10000)}`);
   });
 
   it('should update state.time every 500ms', () => {
+    expect(wrapper.state()).to.deep.equal({ time: new Date(0) });
     sandbox.clock.tick(499);
     expect(wrapper.state()).to.deep.equal({ time: new Date(0) });
     sandbox.clock.tick(1);
@@ -32,7 +34,8 @@ describe('Component: Timer', () => {
   });
 
   it('should clear the interval on unmount', () => {
+    expect(setInterval).to.have.callCount(1);
     wrapper.unmount();
-    expect(clearInterval).to.have.been.calledWith('mockInterval');
+    expect(clearInterval).to.have.been.calledWithExactly(setInterval.returnValues[0]);
   });
 });

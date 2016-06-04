@@ -14,7 +14,7 @@ function* randomImageSaga() {
     const { data } = yield apply(response, response.json);
     const camelcasedData = humps.camelizeKeys(data);
     yield put(imageResponse(camelcasedData));
-    yield delay(imageDuration);
+    yield call(delay, imageDuration);
   } while (true);
 }
 

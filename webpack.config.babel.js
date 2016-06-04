@@ -1,3 +1,5 @@
+import webpack from 'webpack';
+
 import path from 'path';
 
 export default {
@@ -24,4 +26,12 @@ export default {
       },
     ],
   },
+  plugins: [new webpack.DefinePlugin({
+    'process.env': {
+      // Really important to ensure react runs in production mode when you ran
+      // `export NODE_ENV=production` before running webpack. Also note that
+      // exposing your entire process.env is a major security risk.
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    },
+  })],
 };

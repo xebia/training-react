@@ -10,6 +10,9 @@ export default {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
   },
+  devServer: {
+    stats: 'minimal',
+  },
   module: {
     loaders: [
       {

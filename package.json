@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "test": "mocha --opts test-config/mocha.opts",
     "test:watch": "mocha --opts test-config/mocha.opts --watch",
     "lint": "eslint *examples"

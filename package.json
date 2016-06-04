@@ -7,7 +7,8 @@
     "start": "webpack-dev-server",
     "test": "mocha --opts test-config/mocha.opts",
     "test:watch": "mocha --opts test-config/mocha.opts --watch",
-    "lint": "eslint *examples connect-redux-to-react"
+    "lint": "eslint *examples connect-redux-to-react",
+    "build": "NODE_ENV=production webpack --optimize-minimize"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -21,6 +22,7 @@
     "babel-register": "^6.7.2",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.4.2",
+    "copy-webpack-plugin": "^3.0.1",
     "enzyme": "^2.2.0",
     "es6-promise": "^3.2.1",
     "eslint": "^2.9.0",

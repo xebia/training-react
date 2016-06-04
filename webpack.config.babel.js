@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 import path from 'path';
 
@@ -26,12 +27,20 @@ export default {
       },
     ],
   },
-  plugins: [new webpack.DefinePlugin({
-    'process.env': {
-      // Really important to ensure react runs in production mode when you ran
-      // `export NODE_ENV=production` before running webpack. Also note that
-      // exposing your entire process.env is a major security risk.
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-    },
-  })],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        // Really important to ensure react runs in production mode when you ran
+        // `export NODE_ENV=production` before running webpack. Also note that
+        // exposing your entire process.env is a major security risk.
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
+    }),
+    new CopyWebpackPlugin([
+      { from: 'connect-redux-to-react/connect-redux-to-react.html' },
+      { from: 'es6-jsx-examples/helloworld.html' },
+      { from: 'es6-jsx-examples/timer.html' },
+      { from: 'simple-redux-form/simple-redux-form.html' },
+    ]),
+  ],
 };

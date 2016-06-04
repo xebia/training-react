@@ -6,6 +6,7 @@ export default {
     helloworld: './es6-jsx-examples/helloworld.js',
     timer: './es6-jsx-examples/timer.js',
     'connect-redux-to-react': './connect-redux-to-react/index.js',
+    'simple-redux-form': './simple-redux-form/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

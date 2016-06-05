@@ -10,7 +10,8 @@
     "lint": "eslint *examples connect-redux-to-react *exercise",
     "build": "NODE_ENV=production webpack --optimize-minimize",
     "prebuild": "npm run clean",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "serve": "cd dist; hs -o"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -32,6 +33,7 @@
     "eslint-plugin-import": "^1.6.1",
     "eslint-plugin-jsx-a11y": "^1.0.4",
     "eslint-plugin-react": "^5.0.1",
+    "http-server": "^0.9.0",
     "humps": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "mocha": "^2.4.5",

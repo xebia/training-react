@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "nodemon -w webpack.config.babel.js --exec webpack-dev-server",
     "test": "mocha --opts test-config/mocha.opts",
     "test:watch": "mocha --opts test-config/mocha.opts --watch",
-    "lint": "eslint *examples connect-redux-to-react",
+    "lint": "eslint *examples connect-redux-to-react *exercise",
     "build": "NODE_ENV=production webpack --optimize-minimize"
   },
   "author": "",
@@ -33,6 +33,7 @@
     "humps": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "mocha": "^2.4.5",
+    "nodemon": "^1.9.2",
     "react": "^15.0.2",
     "react-addons-test-utils": "^15.0.2",
     "react-dom": "^15.0.2",

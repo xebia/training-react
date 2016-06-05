@@ -10,6 +10,7 @@ export default {
     timer: './es6-jsx-examples/timer.js',
     'connect-redux-to-react': './connect-redux-to-react/index.js',
     'simple-redux-form': './simple-redux-form/index.js',
+    'example-page': './jsx-exercise/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -41,6 +42,7 @@ export default {
       { from: 'es6-jsx-examples/helloworld.html' },
       { from: 'es6-jsx-examples/timer.html' },
       { from: 'simple-redux-form/simple-redux-form.html' },
+      { from: 'jsx-exercise/example-page.html' },
     ]),
   ],
 };

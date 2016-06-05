@@ -1,14 +1,8 @@
 (function (window, document) {
   var React = window.React;
   var ReactDOM = window.ReactDOM;
-
-  var div = React.DOM.div;
-  var h1 = React.DOM.h1;
-  var p = React.DOM.p;
-
-
+  var RD = React.DOM;
   var Timer;
-
 
   function getState() {
     return {
@@ -28,9 +22,9 @@
       window.clearInterval(this.interval);
     },
     render: function () {
-      return div(null,
-        h1(null, 'Hello World!'),
-        p(null, 'The time is ' + this.state.time)
+      return RD.div(null,
+        RD.h1(null, 'Hello World!'),
+        RD.p(null, 'The time is ' + this.state.time)
       );
     },
   });

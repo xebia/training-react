@@ -2,19 +2,15 @@
   var React = window.React;
   var ReactDOM = window.ReactDOM;
 
-  var div = React.DOM.div;
-  var h1 = React.DOM.h1;
-  var p = React.DOM.p;
-  var ol = React.DOM.ol;
-  var li = React.DOM.li;
+  var rd = React.DOM;
 
-  var HelloWorld = div(null,
-    h1(null, 'Hello World!'),
-    p(null, 'this is a paragraph'),
-    p(null, 'Look at this list:'),
-    ol(null,
+  var HelloWorld = rd.div(null,
+    rd.h1(null, 'Hello World!'),
+    rd.p(null, 'this is a paragraph'),
+    rd.p(null, 'Look at this list:'),
+    rd.ol(null,
        [1, 2, 3].map(function (number) {
-         return li({ key: number }, 'item ' + number);
+         return rd.li({ key: number }, 'item ' + number);
        })
     )
   );

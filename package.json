@@ -44,6 +44,7 @@
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-saga": "^0.10.4",
+    "redux-thunk": "^2.1.0",
     "regenerator-runtime": "^0.9.5",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",

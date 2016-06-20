@@ -7,7 +7,7 @@
     "start": "nodemon -w webpack.config.babel.js --exec webpack-dev-server",
     "test": "mocha --opts test-config/mocha.opts",
     "test:watch": "mocha --opts test-config/mocha.opts --watch",
-    "lint": "eslint *examples connect-redux-to-react *exercise",
+    "lint": "eslint '**/*.js'",
     "build": "NODE_ENV=production webpack --optimize-minimize",
     "prebuild": "npm run clean",
     "clean": "rm -rf dist",

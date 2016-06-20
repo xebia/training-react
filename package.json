@@ -50,5 +50,8 @@
     "sinon-chai": "^2.8.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "nock": "^8.0.0"
   }
 }

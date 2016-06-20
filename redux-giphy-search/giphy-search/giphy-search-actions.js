@@ -13,6 +13,12 @@ export function submitSearch() {
 
     const { searchTerm } = getState();
     fetch(`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=dc6zaTOxFJmzC`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Response ${response.status} ${response.statusText}`);
+        }
+        return response;
+      })
       .then(response => response.json())
       .then(({ data }) => dispatch({
         type: 'GIPHY_RESPONSE',
@@ -20,7 +26,7 @@ export function submitSearch() {
       }))
       .catch(error => dispatch({
         type: 'GIPHY_ERROR',
-        error,
+        error: error.toString(),
       }));
   };
 }

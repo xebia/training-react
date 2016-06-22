@@ -9,6 +9,7 @@ export default {
     helloworld: './es6-jsx-examples/helloworld.js',
     timer: './es6-jsx-examples/timer.js',
     'connect-redux-to-react': './connect-redux-to-react/index.js',
+    'react-form': './react-form/index.js',
     'simple-redux-form': './simple-redux-form/index.js',
     'example-page': './jsx-exercise/index.js',
     'giphy-search': './redux-giphy-search/index.js',

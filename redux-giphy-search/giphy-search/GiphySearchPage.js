@@ -14,7 +14,7 @@ const GiphyListView = ({
     giphyResponse.giphyList.map(({
       id,
       images: {
-        looping: {
+        original: {
           mp4,
         },
       },

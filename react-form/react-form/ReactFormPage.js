@@ -37,7 +37,7 @@ class ReactFormPage extends Component {
             checked={gender === 'f'} onChange={this.onChangeGender}
           />
         </p>
-        <pre>{JSON.stringify(this.state, null, ' ')}</pre>
+        <pre>state = {JSON.stringify(this.state, null, ' ')}</pre>
       </form>
     );
   }

@@ -12,7 +12,8 @@ export default {
     'react-form': './react-form/index.js',
     'simple-redux-form': './simple-redux-form/index.js',
     'example-page': './jsx-exercise/index.js',
-    'giphy-search': './redux-giphy-search/index.js',
+    'react-giphy-search': './react-giphy-search/index.js',
+    'redux-giphy-search': './redux-giphy-search/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

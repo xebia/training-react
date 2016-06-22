@@ -1,3 +1,5 @@
+import { searchGiphy } from './giphy-search-service.js';
+
 export function changeSearchTerm(searchTerm) {
   return {
     type: 'UPDATE_SEARCH_TERM',
@@ -12,14 +14,7 @@ export function submitSearch() {
     });
 
     const { searchTerm } = getState();
-    fetch(`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=dc6zaTOxFJmzC`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`Response ${response.status} ${response.statusText}`);
-        }
-        return response;
-      })
-      .then(response => response.json())
+    searchGiphy(searchTerm)
       .then(({ data }) => dispatch({
         type: 'GIPHY_RESPONSE',
         giphyList: data,

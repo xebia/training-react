@@ -46,6 +46,7 @@
     "redux-saga": "^0.10.4",
     "redux-thunk": "^2.1.0",
     "regenerator-runtime": "^0.9.5",
+    "reselect": "^2.5.1",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "webpack": "^1.13.0",

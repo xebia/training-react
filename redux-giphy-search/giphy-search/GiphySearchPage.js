@@ -2,28 +2,35 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { changeSearchTerm, submitSearch } from './giphy-search-actions.js';
+import { getTotalGiphyPayloadSize } from './selectors.js';
 
 const GiphyListView = ({
   giphyResponse,
+  totalGiphyPayloadSize,
 }) => {
   if (giphyResponse.message) {
     return <p>{giphyResponse.message}</p>;
   }
 
-  return (<div>{
-    giphyResponse.giphyList.map(({
-      id,
-      images: {
-        original: {
-          mp4,
-        },
-      },
-    }) => <p key={id}><video src={mp4} autoPlay loop /></p>)
-  }</div>);
+  return (
+    <div>
+      {totalGiphyPayloadSize && <p>Size {totalGiphyPayloadSize / 1E6}MB</p>}
+      {
+        giphyResponse.giphyList.map(({
+          id,
+          images: {
+            original: {
+              mp4,
+            },
+          },
+        }) => <p key={id}><video src={mp4} autoPlay loop /></p>)
+      }
+    </div>);
 };
 
 GiphyListView.propTypes = {
   giphyResponse: PropTypes.object.isRequired,
+  totalGiphyPayloadSize: PropTypes.number,
 };
 
 const GiphySearchPage = ({
@@ -46,13 +53,15 @@ GiphySearchPage.propTypes = {
   onSubmitSearch: PropTypes.func.isRequired,
 };
 
-function mapStateToProps({
-  searchTerm,
-  giphyResponse,
-}) {
+function mapStateToProps(state) {
+  const {
+    searchTerm,
+    giphyResponse,
+  } = state;
   return {
     searchTerm,
     giphyResponse,
+    totalGiphyPayloadSize: getTotalGiphyPayloadSize(state),
   };
 }
 

@@ -22,6 +22,7 @@ const simpleFormPage = ({
         name="gender" type="radio" value="f"
         checked={gender === 'f'} onChange={onChangeGender}
       />
+      <pre>name: "{name}" gender: "{gender}"</pre>
     </p>
   </form>
 );

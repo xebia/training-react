@@ -1,7 +1,6 @@
-import nock from 'nock';
 import proxyquire from 'proxyquire';
 
-function makeDispatchMock(done, callIndex, actionAssertion) {
+function assertDispatchCall(done, callIndex, actionAssertion) {
   let call = 0;
   return (...args) => {
     try {
@@ -51,7 +50,7 @@ describe('Action creators: giphy search', () => {
       });
 
       it('should dispatch a GIPHY_RESPONSE', (done) => {
-        const dispatchMock = makeDispatchMock(done, 1, {
+        const dispatchMock = assertDispatchCall(done, 1, {
           type: 'GIPHY_RESPONSE',
           giphyList: 'mockGiphyList',
         });
@@ -65,11 +64,7 @@ describe('Action creators: giphy search', () => {
       beforeEach(() => searchGiphyMock.returns(Promise.reject(new Error('mock error'))));
 
       it('should dispatch a GIPHY_ERROR on invalid status', (done) => {
-        nock('http://api.giphy.com/')
-          .get('/v1/gifs/search?q=mockSearchTerm&api_key=dc6zaTOxFJmzC')
-          .reply(404);
-
-        const dispatchMock = makeDispatchMock(done, 1, {
+        const dispatchMock = assertDispatchCall(done, 1, {
           type: 'GIPHY_ERROR',
           error: 'Error: mock error',
         });

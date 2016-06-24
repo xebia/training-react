@@ -65,7 +65,7 @@ Exercise to get familiar with building React components using JSX. The goal is t
   - Use the data structure in [./jsx-exercise/data.js](./jsx-exercise/data.js)
   - Enable `eslint` in your editor for fast feedback on possible errors
   - Build the components using the stateless function notation
-  - After you build some components manually you can use http://magic.reactjs.net/htmltojsx.htm 
+  - After you build some components manually you can use http://magic.reactjs.net/htmltojsx.htm
 1. Add propType constraints
 
 ### Creating a React form
@@ -74,6 +74,8 @@ Exercise to get familiar with building React components using JSX. The goal is t
 Exercise to work with stateful components in React. The state of the component is displayed on the page to make debugging easier.
 
 1. Add form elements with name and value attributes to [./react-form/react-form/ReactFormPage.js](./react-form/react-form/ReactFormPage.js)
+  - Add a name input and a gender input
+  - Consider using a select input or a radio button
 1. Add change handlers which call `setState` to the component. *NOTE:* make sure that `this` in the change handler point to the instance of the component.
 1. Connect the change handlers to the form element
 

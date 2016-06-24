@@ -14,7 +14,7 @@ const GiphyListView = ({
 
   return (
     <div>
-      {totalGiphyPayloadSize && <p>Size {totalGiphyPayloadSize / 1E6}MB</p>}
+      {totalGiphyPayloadSize && <p>Size {totalGiphyPayloadSize / 2 ** 20} MiB</p>}
       {
         giphyResponse.giphyList.map(({
           id,

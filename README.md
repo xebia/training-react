@@ -54,6 +54,14 @@ Timer:
 
 Same examples as above using ES6 transpilation and JSX. It shows that React components can be written down much more concise and readable in JSX with ES6 compares to in plain ES5.
 
+### Testing React views
+Exercise to work with enzyme and shallow rendering.
+
+1. Implement the tests in [./training-react/es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js](./training-react/es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js)
+  - [./training-react/es6-jsx-examples/timer/__tests__/TimerSpec.js](./training-react/es6-jsx-examples/timer/__tests__/TimerSpec.js) can be used for inspiration
+  - [chai-enzyme](https://github.com/producthunt/chai-enzyme) can also be used to make readable assertions
+
+
 ### JSX Exercise
 [http://localhost:8080/jsx-exercise/example-page.html](http://localhost:8080/jsx-exercise/example-page.html)
 
@@ -128,10 +136,10 @@ Functionally the same form as the plain react form, but with redux this time. Th
 1. Connect the change handlers to the form fields
 1. Verify that the view updates when the form is updated
 
-### Redux giphy search
+### Async action creator: Redux giphy search
 [http://localhost:8080/redux-giphy-search/giphy-search.html](http://localhost:8080/redux-giphy-search/giphy-search.html)
 
-Implement an async action creator to search for giphy's. 
+Implement an async action creator to search for giphy's.
 
 1. Implement `submitSearch` in [./redux-giphy-search/giphy-search/giphy-search-actions.js](./redux-giphy-search/giphy-search/giphy-search-actions.js)
   - It should immediately send a `SUBMIT_SEARCH` event

@@ -91,6 +91,12 @@ Exercise to make an ajax call from React. The view and components are already av
   - Use the `message` field in the state to display possible errors
   - Call `setState` in the `then` callback of the promise
 
+### Testing reducers
+Shows that reducers are easy to test because they are plain JS functions
+
+1. Implement the tests that are not implemented in [./testing-reducers/__tests__/product-reducer-spec.js](./testing-reducers/__tests__/product-reducer-spec.js)
+  - The action creators can be used in this test as well. This ensures when the action creators are updated the tests won't break. This also means that we are testing the action creators and the reducer in the same unit test. Note the action creator for this test are simple, if they were not simple it is best to test action creators and reducers separately.
+
 ### Connect redux to react
 [http://localhost:8080/connect-redux-to-react/connect-redux-to-react.html](http://localhost:8080/connect-redux-to-react/connect-redux-to-react.html)
 

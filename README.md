@@ -56,6 +56,7 @@ Same examples as above using ES6 transpilation and JSX. It shows that React comp
 
 ### Testing React views
 Exercise to work with enzyme and shallow rendering.
+
 1. Implement the tests in [./es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js](./es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js)
   - [./es6-jsx-examples/timer/__tests__/TimerSpec.js](./es6-jsx-examples/timer/__tests__/TimerSpec.js) can be used for inspiration
   - [chai-enzyme](https://github.com/producthunt/chai-enzyme) can also be used to make readable assertions
@@ -162,7 +163,7 @@ Reselect enables high performing calculated properties in redux. In this exercis
   - Can use plain JS
 1. Create a getTotalGiphyPayloadSize which calculates the total payload size from the giphyList
   - Uses `createSelector`
-  - Use this size: `giphy.images.original.mp4`_size
+  - Use this size: `giphy.images.original.mp4_size`
   - Consider using [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Map) and [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
   - Consider writing a unit test to develop the selector
 1. Integrate `getTotalGiphyPayloadSize` in `mapStateToProps` in [./redux-giphy-search/giphy-search/GiphySearchPage.js](./redux-giphy-search/giphy-search/GiphySearchPage.js)

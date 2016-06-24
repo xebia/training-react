@@ -8,25 +8,23 @@ const simpleFormPage = ({
   gender,
   onChangeName,
   onChangeGender,
-}) => {
-  return (
-    <form>
-      <p>Name: <input name="name" value={name} onChange={onChangeName} /></p>
-      <p>Gender:
-        m
-        <input
-          name="gender" type="radio" value="m"
-          checked={gender === 'm'} onChange={onChangeGender}
-        />
-        f
-        <input
-          name="gender" type="radio" value="f"
-          checked={gender === 'f'} onChange={onChangeGender}
-        />
-      </p>
-    </form>
-  );
-};
+}) => (
+  <form>
+    <p>Name: <input name="name" value={name} onChange={onChangeName} /></p>
+    <p>Gender:
+      m
+      <input
+        name="gender" type="radio" value="m"
+        checked={gender === 'm'} onChange={onChangeGender}
+      />
+      f
+      <input
+        name="gender" type="radio" value="f"
+        checked={gender === 'f'} onChange={onChangeGender}
+      />
+    </p>
+  </form>
+);
 
 simpleFormPage.propTypes = {
   name: PropTypes.string.isRequired,
@@ -47,7 +45,7 @@ function mapStateToProps({
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     onChangeName: e => changeName(e.target.value),
-    onChangeGender: e => { return changeGender(e.target.value); },
+    onChangeGender: e => changeGender(e.target.value),
   }, dispatch);
 }
 

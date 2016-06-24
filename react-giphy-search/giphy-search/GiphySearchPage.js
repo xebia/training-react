@@ -63,7 +63,10 @@ class GiphySearchPage extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmitSearch}>
-          <p>Search: <input name="searchTerm" value={searchTerm} onChange={this.onChangeSearchTerm} /></p>
+          <p>
+            Search:
+            <input name="searchTerm" value={searchTerm} onChange={this.onChangeSearchTerm} />
+          </p>
         </form>
         <GiphyListView {...other} />
         <pre>state = {JSON.stringify(this.state, null, ' ')}</pre>

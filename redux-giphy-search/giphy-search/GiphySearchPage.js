@@ -2,9 +2,11 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { changeSearchTerm, submitSearch } from './giphy-search-actions.js';
+import { getTotalGiphyPayloadSize } from './selectors.js';
 
 const GiphyListView = ({
   giphyResponse,
+  totalGiphyPayloadSize,
 }) => {
   if (giphyResponse.message) {
     return <p>{giphyResponse.message}</p>;
@@ -12,6 +14,7 @@ const GiphyListView = ({
 
   return (
     <div>
+      {totalGiphyPayloadSize && <p>Size {totalGiphyPayloadSize / 2 ** 20} MiB</p>}
       {
         giphyResponse.giphyList.map(({
           id,
@@ -27,6 +30,7 @@ const GiphyListView = ({
 
 GiphyListView.propTypes = {
   giphyResponse: PropTypes.object.isRequired,
+  totalGiphyPayloadSize: PropTypes.number,
 };
 
 const GiphySearchPage = ({
@@ -57,6 +61,7 @@ function mapStateToProps(state) {
   return {
     searchTerm,
     giphyResponse,
+    totalGiphyPayloadSize: getTotalGiphyPayloadSize(state),
   };
 }
 

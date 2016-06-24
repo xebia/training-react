@@ -6,6 +6,26 @@
     <div id="app"></div>
     <script src="https://npmcdn.com/react@15.0.2/dist/react.js"></script>
     <script src="https://npmcdn.com/react-dom@15.0.2/dist/react-dom.js"></script>
-    <script src="/helloworld.js"></script>
+    <script>
+(function (window, document) {
+  var React = window.React;
+  var ReactDOM = window.ReactDOM;
+
+  var RD = React.DOM;
+
+  var HelloWorld = RD.div(null,
+    RD.h1(null, 'Hello World!'),
+    RD.p(null, 'this is a paragraph'),
+    RD.p(null, 'Look at this list:'),
+    RD.ol(null,
+       [1, 2, 3].map(function (number) {
+         return RD.li({ key: number }, 'item ' + number);
+       })
+    )
+  );
+
+  ReactDOM.render(HelloWorld, document.getElementById('app'));
+}(window, document));
+    </script>
   </body>
 </html>

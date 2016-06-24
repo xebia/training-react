@@ -10,12 +10,13 @@
     "lint": "eslint '**/*.js'",
     "build": "NODE_ENV=production webpack --optimize-minimize",
     "prebuild": "npm run clean",
-    "clean": "rm -rf dist",
-    "serve": "cd dist; hs -o"
+    "clean": "rimraf dist",
+    "serve": "cd dist; hs -o",
+    "preserve": "npm run build"
   },
   "author": "",
   "license": "UNLICENSED",
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
@@ -37,7 +38,9 @@
     "humps": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "mocha": "^2.4.5",
+    "nock": "^8.0.0",
     "nodemon": "^1.9.2",
+    "proxyquire": "^1.7.9",
     "react": "^15.0.2",
     "react-addons-test-utils": "^15.0.2",
     "react-dom": "^15.0.2",
@@ -47,13 +50,10 @@
     "redux-thunk": "^2.1.0",
     "regenerator-runtime": "^0.9.5",
     "reselect": "^2.5.1",
+    "rimraf": "^2.5.2",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
-  },
-  "devDependencies": {
-    "nock": "^8.0.0",
-    "proxyquire": "^1.7.9"
   }
 }

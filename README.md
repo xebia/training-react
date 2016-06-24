@@ -56,9 +56,8 @@ Same examples as above using ES6 transpilation and JSX. It shows that React comp
 
 ### Testing React views
 Exercise to work with enzyme and shallow rendering.
-
-1. Implement the tests in [./training-react/es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js](./training-react/es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js)
-  - [./training-react/es6-jsx-examples/timer/__tests__/TimerSpec.js](./training-react/es6-jsx-examples/timer/__tests__/TimerSpec.js) can be used for inspiration
+1. Implement the tests in [./es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js](./es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js)
+  - [./es6-jsx-examples/timer/__tests__/TimerSpec.js](./es6-jsx-examples/timer/__tests__/TimerSpec.js) can be used for inspiration
   - [chai-enzyme](https://github.com/producthunt/chai-enzyme) can also be used to make readable assertions
 
 

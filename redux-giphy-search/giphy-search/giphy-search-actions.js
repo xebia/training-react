@@ -1,4 +1,4 @@
-import { searchGiphy } from './giphy-search-service.js';
+// import { searchGiphy } from './giphy-search-service.js';
 
 export function changeSearchTerm(searchTerm) {
   return {
@@ -8,20 +8,4 @@ export function changeSearchTerm(searchTerm) {
 }
 
 export function submitSearch() {
-  return (dispatch, getState) => {
-    dispatch({
-      type: 'SUBMIT_SEARCH',
-    });
-
-    const { searchTerm } = getState();
-    searchGiphy(searchTerm)
-      .then(({ data }) => dispatch({
-        type: 'GIPHY_RESPONSE',
-        giphyList: data,
-      }))
-      .catch(error => dispatch({
-        type: 'GIPHY_ERROR',
-        error: error.toString(),
-      }));
-  };
 }

@@ -27,7 +27,7 @@ npm run build
 ```
 
 ## About
-Each folder contains an example or an exercise. There are no dependencies between the separate folders. Webpack is used for transpilation of the files. There is intentionally no livereload of hot module replacement to make the code easy to read. However when `npm start` is running, only a page refresh is need to see file changes.
+Each folder contains an example or an exercise. There are no dependencies between the separate folders. Webpack is used for transpilation of the files. There is intentionally no livereload of hot module replacement to make the code easy to read. However when `npm start` is running, only a page refresh is needed to see file changes.
 
 ## Exercise / examples
 

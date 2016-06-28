@@ -1,6 +1,6 @@
-export const changeName = function () {
+export const changeName = () => {
 
 };
-export const changeGender = funtion () {
+export const changeGender = () => {
 
 };

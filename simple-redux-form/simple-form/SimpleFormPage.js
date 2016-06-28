@@ -22,8 +22,8 @@ const simpleFormPage = ({
         name="gender" type="radio" value="f"
         checked={gender === 'f'} onChange={onChangeGender}
       />
-      <pre>name: "{name}" gender: "{gender}"</pre>
     </p>
+    <pre>name: "{name}" gender: "{gender}"</pre>
   </form>
 );
 
@@ -38,8 +38,8 @@ function mapStateToProps({
   form: {
     name,
     gender,
-  },
-}) {
+  } = {},
+} = {}) {
   return { name, gender };
 }
 

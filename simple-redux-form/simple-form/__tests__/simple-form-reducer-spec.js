@@ -2,7 +2,7 @@ import simpleFormReducer from '../simple-form-reducer.js';
 
 import { changeName, changeGender } from '../simple-form-actions.js';
 
-describe.only('Reducer: simpleFormReducer', () => {
+describe('Reducer: simpleFormReducer', () => {
   it('should have a valid initial state', () => {
     const initialState = simpleFormReducer(undefined, {});
     expect(initialState).to.deep.equal({ name: '', gender: '' });

@@ -38,5 +38,3 @@ describe('Component: ReactFormPage', () => {
     expect(femaleRadio.props().checked).to.equal(true);
   });
 });
-  });
-});

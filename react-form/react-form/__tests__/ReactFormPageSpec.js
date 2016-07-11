@@ -11,6 +11,6 @@ describe('Component: ReactFormPage', () => {
   it('should update the state when gender changes', () => {
   });
 
-  it.only('should bind the state to the form fields', () => {
+  it('should bind the state to the form fields', () => {
   });
 });

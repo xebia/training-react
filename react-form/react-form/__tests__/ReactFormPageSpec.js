@@ -26,7 +26,7 @@ describe('Component: ReactFormPage', () => {
     expect(wrapper.state()).to.deep.equal({ gender: 'f' });
   });
 
-  it.only('should bind the state to the form fields', () => {
+  it('should bind the state to the form fields', () => {
     wrapper.setState({ name: 'unit name', gender: 'f' });
     const name = wrapper.find('input[name="name"]');
     expect(name.props().value).to.equal('unit name');

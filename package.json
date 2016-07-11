@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -w webpack.config.babel.js --exec webpack-dev-server --port 8000",
+    "start": "nodemon -w webpack.config.babel.js --exec webpack-dev-server",
     "test": "mocha --opts test-config/mocha.opts",
     "test:watch": "mocha --opts test-config/mocha.opts --watch",
     "lint": "eslint '**/*.js'",

@@ -115,26 +115,12 @@ A redux store has been defined which will update its state with a random giphy. 
 1. Use the [redux devtools extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) to inspect the updating store
 1. Connect redux to the app in [./connect-redux-to-react/app/App.js](./connect-redux-to-react/app/App.js) and [./connect-redux-to-react/random-image/RandomImagePage.js](./connect-redux-to-react/random-image/RandomImagePage.js)
 
-### Create a form in redux
+### Implement the form actions and reducer in redux
 [http://localhost:8080/simple-redux-form/simple-redux-form.html](http://localhost:8080/simple-redux-form/simple-redux-form.html)
 
-Functionally the same form as the plain react form, but with redux this time. This exercise demonstrates the difference in boilerplate between React and redux. However do note that in production you might want to use something like [redux-form](https://github.com/erikras/redux-form) to limit the required boilerplate in redux.
-
-1. Create a redux store in `./simple-redux-from/app/store.js`
-1. Create an empty `simple-form-reducer.js` in [./simple-redux-form/simple-form/](./simple-redux-form/simple-form/) and integrate it in the store
-  - The reducer should have the initial state:
-  ``` javascript
-  {
-    name: '',
-    gender: '',
-  }
-  ```
-  - The reducer should be integrated using `combineReducers` and have the key `form`.
-1. Connect the [./simple-redux-form/simple-form/SimpleFormPage.js](./simple-redux-form/simple-form/SimpleFormPage.js) to the redux store to make sure there are no propTypes errors
-1. Create `simple-form-actions.js` to send new values for `name` and `gender` to redux
-1. Use mapDispatchToProps and bindActionCreators to create change handler for the for fields
-1. Connect the change handlers to the form fields
-1. Verify that the view updates when the form is updated
+1. Implement the store in [./simple-redux-from/app/store.js](./simple-redux-from/app/store.js)
+1. Implement the actions in [./simple-redux-from/simple-form/simple-form-actions.js](./simple-redux-from/simple-form/simple-form-actions.js)
+  **NOTE** you can use the spec in [./simple-redux-form/simple-form/__tests__/simple-form-reducer-spec.js](./simple-redux-form/simple-form/__tests__/simple-form-reducer-spec.js)
 
 ### Async action creator: Redux giphy search
 [http://localhost:8080/redux-giphy-search/giphy-search.html](http://localhost:8080/redux-giphy-search/giphy-search.html)

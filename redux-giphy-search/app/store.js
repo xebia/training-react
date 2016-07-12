@@ -1,5 +1,5 @@
 import { createStore, compose, combineReducers, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
+// import thunkMiddleware from 'redux-thunk';
 
 import giphySearchTermReducer from '../giphy-search/giphy-searchterm-reducer.js';
 import giphyResponseReducer from '../giphy-search/giphy-response-reducer.js';
@@ -11,9 +11,6 @@ const combinedReducers = combineReducers({
   giphyResponse: giphyResponseReducer,
 });
 
-const store = compose(
-  applyMiddleware(thunkMiddleware),
-  debugStoreEnhancer
-)(createStore)(combinedReducers);
+const store = debugStoreEnhancer(createStore)(combinedReducers);
 
 export default store;

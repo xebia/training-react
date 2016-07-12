@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 
 const randomImagePage = ({ imageMp4Url }) => (
   <div>
@@ -14,8 +13,4 @@ randomImagePage.propTypes = {
   imageMp4Url: PropTypes.string.isRequired,
 };
 
-function mapStateToProps({ randomImage: { imageMp4Url } }) {
-  return { imageMp4Url };
-}
-
-export default connect(mapStateToProps)(randomImagePage);
+export default randomImagePage;

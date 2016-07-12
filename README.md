@@ -27,7 +27,7 @@ npm run build
 ```
 
 ## About
-Each folder contains an example or an exercise. There are no dependencies between the separate folders. Webpack is used for transpilation of the files. There is intentionally no livereload of hot module replacement to make the code easy to read. However when `npm start` is running, only a page refresh is need to see file changes.
+Each folder contains an example or an exercise. There are no dependencies between the separate folders. Webpack is used for transpilation of the files. There is intentionally no livereload of hot module replacement to make the code easy to read. However when `npm start` is running, only a page refresh is needed to see file changes.
 
 ## Exercise / examples
 
@@ -53,6 +53,14 @@ Timer:
 - [http://localhost:8080/es6-jsx-examples/timer.html](http://localhost:8080/es6-jsx-examples/timer.html)
 
 Same examples as above using ES6 transpilation and JSX. It shows that React components can be written down much more concise and readable in JSX with ES6 compares to in plain ES5.
+
+### Testing React views
+Exercise to work with enzyme and shallow rendering.
+
+1. Implement the tests in [./es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js](./es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js)
+  - [./es6-jsx-examples/timer/__tests__/TimerSpec.js](./es6-jsx-examples/timer/__tests__/TimerSpec.js) can be used for inspiration
+  - [chai-enzyme](https://github.com/producthunt/chai-enzyme) can also be used to make readable assertions
+
 
 ### JSX Exercise
 [http://localhost:8080/jsx-exercise/example-page.html](http://localhost:8080/jsx-exercise/example-page.html)
@@ -107,31 +115,17 @@ A redux store has been defined which will update its state with a random giphy. 
 1. Use the [redux devtools extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) to inspect the updating store
 1. Connect redux to the app in [./connect-redux-to-react/app/App.js](./connect-redux-to-react/app/App.js) and [./connect-redux-to-react/random-image/RandomImagePage.js](./connect-redux-to-react/random-image/RandomImagePage.js)
 
-### Create a form in redux
+### Implement the form actions and reducer in redux
 [http://localhost:8080/simple-redux-form/simple-redux-form.html](http://localhost:8080/simple-redux-form/simple-redux-form.html)
 
-Functionally the same form as the plain react form, but with redux this time. This exercise demonstrates the difference in boilerplate between React and redux. However do note that in production you might want to use something like [redux-form](https://github.com/erikras/redux-form) to limit the required boilerplate in redux.
+1. Implement the store in [./simple-redux-from/app/store.js](./simple-redux-from/app/store.js)
+1. Implement the actions in [./simple-redux-from/simple-form/simple-form-actions.js](./simple-redux-from/simple-form/simple-form-actions.js)
+  **NOTE** you can use the spec in [./simple-redux-form/simple-form/__tests__/simple-form-reducer-spec.js](./simple-redux-form/simple-form/__tests__/simple-form-reducer-spec.js)
 
-1. Create a redux store in `./simple-redux-from/app/store.js`
-1. Create an empty `simple-form-reducer.js` in [./simple-redux-form/simple-form/](./simple-redux-form/simple-form/) and integrate it in the store
-  - The reducer should have the initial state:
-  ``` javascript
-  {
-    name: '',
-    gender: '',
-  }
-  ```
-  - The reducer should be integrated using `combineReducers` and have the key `form`.
-1. Connect the [./simple-redux-form/simple-form/SimpleFormPage.js](./simple-redux-form/simple-form/SimpleFormPage.js) to the redux store to make sure there are no propTypes errors
-1. Create `simple-form-actions.js` to send new values for `name` and `gender` to redux
-1. Use mapDispatchToProps and bindActionCreators to create change handler for the for fields
-1. Connect the change handlers to the form fields
-1. Verify that the view updates when the form is updated
-
-### Redux giphy search
+### Async action creator: Redux giphy search
 [http://localhost:8080/redux-giphy-search/giphy-search.html](http://localhost:8080/redux-giphy-search/giphy-search.html)
 
-Implement an async action creator to search for giphy's. 
+Implement an async action creator to search for giphy's.
 
 1. Implement `submitSearch` in [./redux-giphy-search/giphy-search/giphy-search-actions.js](./redux-giphy-search/giphy-search/giphy-search-actions.js)
   - It should immediately send a `SUBMIT_SEARCH` event
@@ -155,7 +149,7 @@ Reselect enables high performing calculated properties in redux. In this exercis
   - Can use plain JS
 1. Create a getTotalGiphyPayloadSize which calculates the total payload size from the giphyList
   - Uses `createSelector`
-  - Use this size: `giphy.images.original.mp4`_size
+  - Use this size: `giphy.images.original.mp4_size`
   - Consider using [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Map) and [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
   - Consider writing a unit test to develop the selector
 1. Integrate `getTotalGiphyPayloadSize` in `mapStateToProps` in [./redux-giphy-search/giphy-search/GiphySearchPage.js](./redux-giphy-search/giphy-search/GiphySearchPage.js)

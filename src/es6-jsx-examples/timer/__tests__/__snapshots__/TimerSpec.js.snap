@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Timer should render the current time based on the state 1`] = `
+<div>
+  <h1>
+    Hello World!
+  </h1>
+  <p>
+    The time is 
+    [object Object]
+  </p>
+</div>
+`;

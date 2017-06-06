@@ -1,24 +1,10 @@
-import proxyquire from 'proxyquire';
+import { searchGiphy } from '../giphy-search-service.js';
+import { submitSearch } from '../giphy-search-actions';
 
-function assertDispatchCall(done, callIndex, actionAssertion) {
-  let call = 0;
-  return (...args) => {
-    try {
-      if (call === callIndex) {
-        expect(args).toEqual([actionAssertion]);
-        done();
-      }
-      call++;
-    } catch (e) {
-      done(e);
-    }
-  };
-}
+jest.mock('../giphy-search-service');
 
 describe('Action creators: giphy search', () => {
   describe('submitSearch()', () => {
-    let searchGiphyMock;
-    let submitSearch;
 
     function getStateMock() {
       return {
@@ -26,51 +12,45 @@ describe('Action creators: giphy search', () => {
       };
     }
 
-    beforeEach(() => {
-      searchGiphyMock = sinon.stub();
-
-      const giphySearchActions = proxyquire('../giphy-search-actions.js', {
-        './giphy-search-service.js': {
-          searchGiphy: searchGiphyMock,
-        },
-      });
-
-      submitSearch = giphySearchActions.submitSearch;
-    });
-
     describe('when giphy search succeeds', () => {
-      beforeEach(() => searchGiphyMock.returns(Promise.resolve({ data: 'mockGiphyList' })));
+      beforeEach(() => searchGiphy.mockImplementation(() => Promise.resolve({ data: 'mockGiphyList' })));
 
       it('should dispatch SUBMIT_SEARCH immediately', () => {
-        const dispatchMock = sinon.spy();
+        const dispatchMock = jest.fn();
         submitSearch()(dispatchMock, getStateMock);
-        expect(dispatchMock).to.have.been.calledWithExactly({
+        expect(dispatchMock).toHaveBeenCalledWith({
           type: 'SUBMIT_SEARCH',
         });
       });
 
-      it('should dispatch a GIPHY_RESPONSE', (done) => {
-        const dispatchMock = assertDispatchCall(done, 1, {
+      it('should dispatch a GIPHY_RESPONSE', async () => {
+        const dispatchMock = jest.fn();
+
+        await submitSearch()(dispatchMock, getStateMock);
+        expect(dispatchMock.mock.calls).toEqual([[{
+          type: 'SUBMIT_SEARCH',
+        }], [{
           type: 'GIPHY_RESPONSE',
           giphyList: 'mockGiphyList',
-        });
-
-        submitSearch()(dispatchMock, getStateMock);
-        expect(searchGiphyMock).to.have.been.calledWithExactly('mockSearchTerm');
+        }]]);
+        expect(searchGiphy).toHaveBeenCalledWith('mockSearchTerm');
       });
     });
 
     describe('when giphy search fails', () => {
-      beforeEach(() => searchGiphyMock.returns(Promise.reject(new Error('mock error'))));
+      beforeEach(() => searchGiphy.mockImplementation(() => Promise.reject(new Error('mock error'))));
 
-      it('should dispatch a GIPHY_ERROR on invalid status', (done) => {
-        const dispatchMock = assertDispatchCall(done, 1, {
+      it('should dispatch a GIPHY_ERROR on invalid status', async () => {
+        const dispatchMock = jest.fn();
+
+        await submitSearch()(dispatchMock, getStateMock);
+        expect(dispatchMock.mock.calls).toEqual([[{
+          type: 'SUBMIT_SEARCH',
+        }], [{
           type: 'GIPHY_ERROR',
           error: 'Error: mock error',
-        });
-
-        submitSearch()(dispatchMock, getStateMock);
-        expect(searchGiphyMock).to.have.been.calledWithExactly('mockSearchTerm');
+        }]]);
+        expect(searchGiphy).toHaveBeenCalledWith('mockSearchTerm');
       });
     });
   });

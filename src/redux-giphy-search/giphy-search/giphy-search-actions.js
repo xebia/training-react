@@ -14,7 +14,7 @@ export function submitSearch() {
     });
 
     const { searchTerm } = getState();
-    searchGiphy(searchTerm)
+    return searchGiphy(searchTerm)
       .then(({ data }) => dispatch({
         type: 'GIPHY_RESPONSE',
         giphyList: data,

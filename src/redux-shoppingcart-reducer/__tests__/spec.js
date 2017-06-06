@@ -6,7 +6,7 @@ const line2 = { productId: '456', amount: 2 };
 describe('Shopping cart reducer', () => {
   it('should initially return an empty array', () => {
     const result = reducer(undefined, {});
-    expect(result).to.deep.equal([]);
+    expect(result).toEqual([]);
   });
 
   it('should return the state unchanged when called with an unmatched action type', () => {
@@ -16,7 +16,7 @@ describe('Shopping cart reducer', () => {
       payload: {}
     };
     const result = reducer(state, action);
-    expect(result).to.equal(state);
+    expect(result).toBe(state);
   });
 
   describe('ADD_TO_CART', () => {
@@ -27,7 +27,7 @@ describe('Shopping cart reducer', () => {
         payload: line1
       };
       const result = reducer(state, action);
-      expect(result).to.deep.equal([line1]);
+      expect(result).toEqual([line1]);
     });
 
     it('should append additional products at the end', () => {
@@ -37,7 +37,7 @@ describe('Shopping cart reducer', () => {
         payload: line2
       };
       const result = reducer(state, action);
-      expect(result).to.deep.equal([line1, line2]);
+      expect(result).toEqual([line1, line2]);
     });
 
     it('should add the amount if a product is added a second time', () => {
@@ -47,7 +47,7 @@ describe('Shopping cart reducer', () => {
         payload: line1
       };
       const result = reducer(state, action);
-      expect(result).to.deep.equal([{ ...line1, amount: 2 }]);
+      expect(result).toEqual([{ ...line1, amount: 2 }]);
     });
   });
 
@@ -59,7 +59,7 @@ describe('Shopping cart reducer', () => {
         payload: { productId: '123' }
       };
       const result = reducer(state, action);
-      expect(result).to.deep.equal([{ ...line1, amount: 2 }]);
+      expect(result).toEqual([{ ...line1, amount: 2 }]);
     });
   });
 });

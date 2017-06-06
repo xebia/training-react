@@ -5,7 +5,7 @@ function assertDispatchCall(done, callIndex, actionAssertion) {
   return (...args) => {
     try {
       if (call === callIndex) {
-        expect(args).to.deep.equal([actionAssertion]);
+        expect(args).toEqual([actionAssertion]);
         done();
       }
       call++;

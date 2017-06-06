@@ -12,7 +12,7 @@ describe('Reducer: product', () => {
       type: 'init',
     };
     const initialState = productReducer(undefined, initialAction);
-    expect(initialState).to.deep.equal({
+    expect(initialState).toEqual({
       loading: false,
       error: null,
       product: null,
@@ -21,7 +21,7 @@ describe('Reducer: product', () => {
 
   it('should be loading when we start fetching', () => {
     const state = productReducer(undefined, fetchingProduct());
-    expect(state).to.deep.equal({
+    expect(state).toEqual({
       loading: true,
       error: null,
       product: null,
@@ -31,39 +31,39 @@ describe('Reducer: product', () => {
   it('should stop loading on result or error', () => {
     const stateAfterResult = productReducer({ loading: true }, fetchProductResult('mockResult'));
     const stateAfterError = productReducer({ loading: true }, fetchProductError('mockError'));
-    expect(stateAfterResult.loading).to.equal(false);
-    expect(stateAfterError.loading).to.equal(false);
+    expect(stateAfterResult.loading).toBe(false);
+    expect(stateAfterError.loading).toBe(false);
   });
 
   it('should store product results', () => {
     const stateAfterResult = productReducer(undefined, fetchProductResult('mockResult'));
-    expect(stateAfterResult.product).to.equals('mockResult');
+    expect(stateAfterResult.product).toBe('mockResult');
     const stateAfterNewProduct = productReducer(
       stateAfterResult,
       fetchProductResult('mockResult2')
     );
-    expect(stateAfterNewProduct.product).to.equal('mockResult2');
+    expect(stateAfterNewProduct.product).toBe('mockResult2');
   });
 
   it('should reset product in case of an error', () => {
     const stateWithProduct = { product: 'mockProduct' };
     const stateAfterError = productReducer(stateWithProduct, fetchProductError('mockError'));
-    expect(stateAfterError.product).to.equal(null);
+    expect(stateAfterError.product).toBe(null);
   });
 
   it('should store product error', () => {
     const stateAfterError = productReducer(undefined, fetchProductError('mockError'));
-    expect(stateAfterError.error).to.equals('mockError');
+    expect(stateAfterError.error).toBe('mockError');
     const stateAfterNewError = productReducer(
       stateAfterError,
       fetchProductError('mockError2')
     );
-    expect(stateAfterNewError.error).to.equal('mockError2');
+    expect(stateAfterNewError.error).toBe('mockError2');
   });
 
   it('should reset error after product result', () => {
     const stateWithError = { error: 'mockError' };
     const stateAfterResult = productReducer(stateWithError, fetchProductResult('mockResult'));
-    expect(stateAfterResult.error).to.equal(null);
+    expect(stateAfterResult.error).toBe(null);
   });
 });

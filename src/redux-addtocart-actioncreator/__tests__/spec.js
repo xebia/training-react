@@ -10,6 +10,6 @@ describe('addToCart', () => {
       }
     };
     const result = addToCart('12345', 42);
-    expect(result).to.deep.equal(expected);
+    expect(result).toEqual(expected);
   });
 });

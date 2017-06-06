@@ -5,17 +5,17 @@ import { changeName, changeGender } from '../simple-form-actions.js';
 describe('Reducer: simpleFormReducer', () => {
   it('should have a valid initial state', () => {
     const initialState = simpleFormReducer(undefined, {});
-    expect(initialState).to.deep.equal({ name: '', gender: '' });
+    expect(initialState).toEqual({ name: '', gender: '' });
   });
 
   it('should update gender when changeGender is fired', () => {
     const newState = simpleFormReducer(undefined, changeGender('unit gender'));
-    expect(newState).to.deep.equal({ name: '', gender: 'unit gender' });
+    expect(newState).toEqual({ name: '', gender: 'unit gender' });
   });
 
   it('should update name when changeName is fired', () => {
     const newState = simpleFormReducer(undefined, changeName('unit name'));
-    expect(newState).to.deep.equal({ name: 'unit name', gender: '' });
+    expect(newState).toEqual({ name: 'unit name', gender: '' });
   });
 
   it('should not mutate the state', () => {
@@ -25,9 +25,9 @@ describe('Reducer: simpleFormReducer', () => {
     });
 
     const newState = simpleFormReducer(currentState, changeName('unit name'));
-    expect(newState).to.deep.equal({ name: 'unit name', gender: 'current gender' });
+    expect(newState).toEqual({ name: 'unit name', gender: 'current gender' });
 
     const newState2 = simpleFormReducer(currentState, changeGender('unit gender'));
-    expect(newState2).to.deep.equal({ name: 'current name', gender: 'unit gender' });
+    expect(newState2).toEqual({ name: 'current name', gender: 'unit gender' });
   });
 });

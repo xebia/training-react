@@ -13,12 +13,12 @@ class App extends Component {
         </div>
         <p className="App-intro">
           Try one of these examples:
-          <ul>
-            {
-              components.map(c => <li key={c}><a href={`/?component=${c}`}>{c}</a></li>)
-            }
-          </ul>
         </p>
+        <ul>
+          {
+            components.map(c => <li key={c}><a href={`/?component=${c}`}>{c}</a></li>)
+          }
+        </ul>
       </div>
     );
   }

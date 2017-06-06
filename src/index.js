@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import HomePage from './App';
 import Es6JsxExampleTimer from './es6-jsx-examples/timer/Timer';
 import Es6JsxExampleHelloWorld from './es6-jsx-examples/helloworld/HelloWorld';
-import JsxExercise from './jsx-exercise/example-page/ExamplePage';
+import JsxExercise from './jsx-exercise';
 import ConnectReduxToReact from './connect-redux-to-react/app/App';
 import ReactForm from './react-form/react-form/ReactFormPage';
 import ReactGiphySearch from './react-giphy-search/giphy-search/GiphySearchPage'

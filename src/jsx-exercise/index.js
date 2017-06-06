@@ -5,4 +5,6 @@ import ExamplePage from './example-page/ExamplePage.js';
 
 import data from './data.js';
 
-ReactDOM.render(<ExamplePage {...data} />, document.getElementById('app'));
+export default function JsxExercise() {
+  return <ExamplePage {...data} />;
+}

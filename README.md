@@ -67,12 +67,12 @@ Exercise to work with snapshot tests.
 Exercise to get familiar with building React components using JSX. The goal is to reproduce the page shown [here](https://v4-alpha.getbootstrap.com/examples/jumbotron/). The data structure for the contents of the page can be found in [./src/jsx-exercise/data.js](./src/jsx-exercise/data.js). The exercise has the following steps:
 
 1. Identify the components the [exercise page](https://v4-alpha.getbootstrap.com/examples/jumbotron/) consists of
-1. Build the components in the folder [./src/jsx-exercise/example-page/](./src/jsx-exercise/example-page/)
+2. Build the components in the folder [./src/jsx-exercise/example-page/](./src/jsx-exercise/example-page/)
   - Put each component in a separate file
   - Use the data structure in [./src/jsx-exercise/data.js](./src/jsx-exercise/data.js)
   - Build the components using the stateless function notation
   - After you build some components manually you can use http://magic.reactjs.net/htmltojsx.htm
-1. Add propType constraints
+3. Add propType constraints
 
 ### Creating a React form
 [http://localhost:3000/?component=ReactForm](http://localhost:3000/?component=ReactForm)
@@ -82,8 +82,8 @@ Exercise to work with stateful components in React. The state of the component i
 1. Add form elements with name and value attributes to [./src/react-form/react-form/ReactFormPage.js](./src/react-form/react-form/ReactFormPage.js)
   - Add a name input and a gender input
   - Consider using a select input or a radio button
-1. Add change handlers which call `setState` to the component. *NOTE:* make sure that `this` in the change handler point to the instance of the component.
-1. Connect the change handlers to the form element
+2. Add change handlers which call `setState` to the component. *NOTE:* make sure that `this` in the change handler point to the instance of the component.
+3. Connect the change handlers to the form element
 
 ### React giphy search
 [http://localhost:3000/?component=ReactGiphySearch](http://localhost:3000/?component=ReactGiphySearch)
@@ -91,8 +91,8 @@ Exercise to work with stateful components in React. The state of the component i
 Exercise to make an ajax call from React. The view and components are already available. The file to edit is [./src/react-giphy-search/giphy-search/GiphySearchPage.js](./src/react-giphy-search/giphy-search/GiphySearchPage.js).
 
 1. Make sure the value of the searchTerm input box is part of the component state
-1. Implement an `onSubmit` handler which calls `preventDefault`
-1. Load the data from the `onSubmit` handler:
+2. Implement an `onSubmit` handler which calls `preventDefault`
+3. Load the data from the `onSubmit` handler:
   - Call `searchGiphy` which is located in [./src/react-giphy-search/giphy-search/giphy-search-service.js](./src/react-giphy-search/giphy-search/giphy-search-service.js) to fetch a list of giphy's
   - `searchGiphy` returns a promise of the response of the backend. Inspect/log the data to determine how to use it.
   - If fetching the data fails the promise will be rejected with an `Error` instance
@@ -111,13 +111,13 @@ Shows that reducers are easy to test because they are plain JS functions
 A redux store has been defined which will update its state with a random giphy. The goal is to connect this store to the provided view.
 
 1. Use the [redux devtools extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) to inspect the updating store
-1. Connect redux to the app in [./src/connect-redux-to-react/app/App.js](./src/connect-redux-to-react/app/App.js) and [./src/connect-redux-to-react/random-image/RandomImagePage.js](./src/connect-redux-to-react/random-image/RandomImagePage.js)
+2. Connect redux to the app in [./src/connect-redux-to-react/app/App.js](./src/connect-redux-to-react/app/App.js) and [./src/connect-redux-to-react/random-image/RandomImagePage.js](./src/connect-redux-to-react/random-image/RandomImagePage.js)
 
 ### Implement the form actions and reducer in redux
 [http://localhost:3000/?component=SimpleReduxFrom](http://localhost:3000/?component=SimpleReduxFrom)
 
 1. Implement the store in [./src/simple-redux-from/app/store.js](./src/simple-redux-from/app/store.js)
-1. Implement the actions in [./src/simple-redux-from/simple-form/simple-form-actions.js](./src/simple-redux-from/simple-form/simple-form-actions.js)
+2. Implement the actions in [./src/simple-redux-from/simple-form/simple-form-actions.js](./src/simple-redux-from/simple-form/simple-form-actions.js)
   **NOTE** you can use the spec in [./src/simple-redux-form/simple-form/__tests__/simple-form-reducer-spec.js](./src/simple-redux-form/simple-form/__tests__/simple-form-reducer-spec.js)
 
 ### Async action creator: Redux giphy search
@@ -145,12 +145,12 @@ Reselect enables high performing calculated properties in redux. In this exercis
 
 1. Create a getGiphyList select to get the giphyList out of the state
   - Can use plain JS
-1. Create a getTotalGiphyPayloadSize which calculates the total payload size from the giphyList
+2. Create a getTotalGiphyPayloadSize which calculates the total payload size from the giphyList
   - Uses `createSelector`
   - Use this size: `giphy.images.original.mp4_size`
   - Consider using [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Map) and [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
   - Consider writing a unit test to develop the selector
-1. Integrate `getTotalGiphyPayloadSize` in `mapStateToProps` in [./src/redux-giphy-search/giphy-search/GiphySearchPage.js](./src/redux-giphy-search/giphy-search/GiphySearchPage.js)
-1. Add the total payload total to the view
+3. Integrate `getTotalGiphyPayloadSize` in `mapStateToProps` in [./src/redux-giphy-search/giphy-search/GiphySearchPage.js](./src/redux-giphy-search/giphy-search/GiphySearchPage.js)
+4. Add the total payload total to the view
   - Add `propType` validation for the new property
 

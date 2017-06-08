@@ -8,7 +8,7 @@ const Navigation = ({
   links,
 }) => (
   <nav className="navbar navbar-static-top navbar-dark bg-inverse">
-    <a className="navbar-brand" href="#">{project}</a>
+    <a className="navbar-brand" href="#/project">{project}</a>
     <ul className="nav navbar-nav">
       {links.map(link => <NavigationLink key={link.text} {...link} />)}
     </ul>

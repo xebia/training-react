@@ -54,10 +54,11 @@ Timer:
 Same examples as above using ES6 transpilation and JSX. It shows that React components can be written down much more concise and readable in JSX with ES6 compares to in plain ES5.
 
 ### Testing React views
-Exercise to work with snapshot tests.
+Exercise to work with snapshot tests and enzyme. Note that a single snapshot is enough for this components, but we want to use Enzyme as well for practice.
 
-1. Implement the test in [./src/es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js](./src/es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js)
+1. Implement the tests in [./src/es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js](./src/es6-jsx-examples/helloworld/__tests__/HelloWorldSpec.js)
   - [./src/es6-jsx-examples/timer/__tests__/TimerSpec.js](./src/es6-jsx-examples/timer/__tests__/TimerSpec.js) can be used for inspiration
+  - [enzyme-matchers](https://github.com/blainekasten/enzyme-matchers) is available as syntax sugar for tests
 
 
 ### JSX Exercise

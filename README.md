@@ -40,7 +40,7 @@ Timer:
 - [http://localhost:3000/es5-nojsx-examples/timer.html](http://localhost:3000/es5-nojsx-examples/timer.html)
 - [http://jsbin.com/guyubo/edit?html,js,output](http://jsbin.com/guyubo/edit?html,js,output)
 
-Shows that React can be used without any tooling like JS transpilation. The example itself can be opened without using NodeJS or npm. Open either [./src/es5-nojsx-examples/helloworld.html](./src/es5-nojsx-examples/helloworld.html) or [./src/es5-nojsx-examples/timer.html](./src/es5-nojsx-examples/timer.html) in a browser.
+Shows that React can be used without any tooling like JS transpilation. The example itself can be opened without using NodeJS or npm. Open either [./public/es5-nojsx-examples/helloworld.html](./public/es5-nojsx-examples/helloworld.html) or [./public/es5-nojsx-examples/timer.html](./public/es5-nojsx-examples/timer.html) in a browser.
 
 `helloworld.html` show the basics of creating a React component and has a loop. `timer.html` show a React component which uses state.
 

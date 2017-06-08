@@ -3,31 +3,30 @@
 ### Installation
 ``` sh
 npm install
+# or
+yarn
 ```
 
 ### Running
 ``` sh
-# Start webpack-dev-server for development or viewing the examples
+# Run the app in development mode.
 npm start
-
-# Make minified build and serve that
-npm run serve
-
-# Run tests
-npm test
+# or
+yarn start
 
 # Run tests on file change
-npm run test:watch
+npm run test
+# or
+yarn test
 
-# Lint code
-npm run lint
-
-# Create a minified build
+# Build the app for production  in the "build" folder
 npm run build
+# or
+yarn build
 ```
 
 ## About
-Each folder contains an example or an exercise. There are no dependencies between the separate folders. Webpack is used for transpilation of the files. There is intentionally no livereload of hot module replacement to make the code easy to read. However when `npm start` is running, only a page refresh is needed to see file changes.
+Each folder contains an example or an exercise. There are no dependencies between the separate folders. [Create-react-app](https://github.com/facebookincubator/create-react-app) is used to provide auto reloading and displaying error messages. It allows us to focus on application code instead of looking at build configuration.
 
 ## Exercise / examples
 

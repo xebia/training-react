@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { changeSearchTerm, submitSearch } from './giphy-search-actions.js';
@@ -14,7 +15,7 @@ const GiphyListView = ({
 
   return (
     <div>
-      {totalGiphyPayloadSize && <p>Size {totalGiphyPayloadSize / 2 ** 20} MiB</p>}
+      {totalGiphyPayloadSize && <p>Size {totalGiphyPayloadSize / (2 ** 20)} MiB</p>}
       {
         giphyResponse.giphyList.map(({
           id,
@@ -25,7 +26,8 @@ const GiphyListView = ({
           },
         }) => <p key={id}><video src={mp4} autoPlay loop /></p>)
       }
-    </div>);
+    </div>
+  );
 };
 
 GiphyListView.propTypes = {

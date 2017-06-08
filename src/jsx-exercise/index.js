@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import ExamplePage from './example-page/ExamplePage.js';
 

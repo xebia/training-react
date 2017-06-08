@@ -36,9 +36,21 @@ class GiphySearchPage extends Component {
       searchTerm: '',
     };
 
+    this.onChangeSearchTerm = e => this.setState({
+      searchTerm: e.target.value,
+    });
+
     this.onSubmitSearch = e => {
       // prevents a page refresh
       e.preventDefault();
+      const { searchTerm } = this.state;
+      searchGiphy(searchTerm)
+      .then(
+        ({ data }) => this.setState({ giphyList: data, message: undefined })
+      )
+      .catch(
+        (error) => this.setState({ message: error.toString(), giphyList: undefined })
+      );
     };
   }
 
@@ -53,7 +65,7 @@ class GiphySearchPage extends Component {
         <form onSubmit={this.onSubmitSearch}>
           <p>
             Search:
-            <input name="searchTerm" />
+            <input name="searchTerm" value={searchTerm} onChange={this.onChangeSearchTerm} />
           </p>
         </form>
         <GiphyListView {...other} />

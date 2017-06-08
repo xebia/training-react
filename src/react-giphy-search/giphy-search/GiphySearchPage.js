@@ -37,7 +37,6 @@ class GiphySearchPage extends Component {
     };
 
     this.onChangeSearchTerm = e => this.setState({
-      ...this.state,
       searchTerm: e.target.value,
     });
 

@@ -82,7 +82,7 @@ Exercise to work with stateful components in React. The state of the component i
 1. Add form elements with name and value attributes to [./src/react-form/react-form/ReactFormPage.js](./src/react-form/react-form/ReactFormPage.js)
   - Add a name input and a gender input
   - Consider using a select input or a radio button
-2. Add change handlers which call `setState` to the component. *NOTE:* make sure that `this` in the change handler point to the instance of the component.
+2. Add change handlers which call `setState` to the component. *NOTE:* make sure that `this` in the change handler points to the instance of the component.
 3. Connect the change handlers to the form element
 
 ### React giphy search

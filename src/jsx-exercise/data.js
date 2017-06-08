@@ -3,17 +3,17 @@ export default {
   navigationLinks: [
     {
       text: 'Home',
-      href: '#',
+      href: '#/home',
       current: true,
     },
     {
       text: 'About',
-      href: '#',
+      href: '#/about',
       current: false,
     },
     {
       text: 'Contact',
-      href: '#',
+      href: '#/contact',
       current: false,
     },
   ],
@@ -24,7 +24,7 @@ export default {
     of content. Use it as a starting point to create something more unique.`,
     button: {
       text: 'View details »',
-      href: '#',
+      href: '#/details-main',
     },
   },
   blocks: [
@@ -36,7 +36,7 @@ export default {
       euismod. Donec sed odio dui.`,
       button: {
         text: 'View details »',
-        href: '#',
+        href: '#/details-0',
       },
     },
     {
@@ -47,7 +47,7 @@ export default {
       euismod. Donec sed odio dui.`,
       button: {
         text: 'View details »',
-        href: '#',
+        href: '#/details-1',
       },
     },
     {
@@ -58,7 +58,7 @@ export default {
       fermentum massa justo sit amet risus.`,
       button: {
         text: 'View details »',
-        href: '#',
+        href: '#/details-2',
       },
     },
   ],

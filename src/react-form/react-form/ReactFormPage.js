@@ -6,12 +6,10 @@ class ReactFormPage extends Component {
     this.state = {};
 
     this.onChangeName = e => this.setState({
-      ...this.state,
       name: e.target.value,
     });
 
     this.onChangeGender = e => this.setState({
-      ...this.state,
       gender: e.target.value,
     });
   }
